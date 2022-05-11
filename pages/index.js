@@ -24,7 +24,7 @@ export default function Home({ cards }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${NEXT_URL}/api`);
+  const res = await fetch(`https://3rfaan.vercel.app/api`);
   const cards = await res.json();
 
   return {

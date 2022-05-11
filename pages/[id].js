@@ -196,7 +196,7 @@ export default function CardPage({ card }) {
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
 
-  const res = await fetch(`${NEXT_URL}/api/${id}`);
+  const res = await fetch(`https://3rfaan.vercel.app/api/${id}`);
   const card = await res.json();
 
   return {

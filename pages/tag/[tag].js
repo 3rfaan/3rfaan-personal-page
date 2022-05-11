@@ -58,7 +58,7 @@ export default TagPage;
 export async function getServerSideProps(ctx) {
   const { tag } = ctx.query;
 
-  const res = await fetch(`${NEXT_URL}/api?tag=${tag}`);
+  const res = await fetch(`https://3rfaan.vercel.app/api?tag=${tag}`);
   const cards = await res.json();
 
   return {
