@@ -1,0 +1,10 @@
+.container {
+  max-width: var(--card-max-width);
+  line-height: 0;
+}
+
+.card {
+  display: inline;
+  image-rendering: -webkit-optimize-contrast;
+  cursor: pointer;
+}

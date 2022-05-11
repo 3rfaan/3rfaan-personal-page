@@ -1,9 +1,56 @@
-html,
-body {
+:root {
+  /* Colors */
+  color-scheme: dark;
+
+  --bg-color: #22272e;
+
+  --text-color: #fff;
+  --text-color-light: #adbac7;
+
+  --container-bg-color: #2d333b;
+
+  --btn-download-color: #347d39;
+  --btn-download-hover-color: #46954a;
+
+  /* Margin */
+
+  /* Padding */
+  --container-main-margin: 2rem;
+  --container-main-padding: 2rem;
+  --small-padding: 0.5rem;
+
+  /* Flex / Grid */
+  --grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  --gap: 2rem;
+
+  /* Border */
+  --border: 1px solid #444c56;
+  --border-color: #444c56;
+  --border-hover-color: #adbac7;
+  --border-radius: 6px;
+  --border-round: 50%;
+
+  /* Card */
+  --card-max-width: 27rem;
+
+  /* Diverse */
+  --default-transition: all 0.3s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -11,6 +58,15 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+h1 {
+  font-size: 2.7rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 0.85rem;
+  font-weight: normal;
 }

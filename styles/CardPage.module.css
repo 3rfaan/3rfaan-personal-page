@@ -1,0 +1,126 @@
+.cardPage {
+  width: 100%;
+  min-height: 100%;
+}
+
+.card {
+  padding: 0 0 var(--container-main-padding) 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.container {
+  padding: var(--container-main-padding);
+  max-width: 90%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.ar_container {
+  padding: var(--container-main-padding);
+  max-width: 90%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.imgContainer {
+  width: var(--card-max-width);
+  line-height: 0;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.infoContainer {
+  padding: var(--container-main-padding);
+  min-width: 40%;
+  background-color: var(--container-bg-color);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  flex: 2;
+  overflow: hidden;
+}
+
+.fileInformation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.ar_fileInformation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  direction: rtl;
+}
+
+.firebaseRef {
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  background-color: var(--text-color-light);
+  color: var(--bg-color);
+  border-radius: 25px;
+}
+
+.smallTitle {
+  margin-bottom: var(--small-padding);
+  color: var(--text-color-light);
+  text-transform: uppercase;
+}
+
+.tags {
+  margin: var(--container-main-margin) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ar_tags {
+  margin: var(--container-main-margin) 0;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tag {
+  padding: var(--small-padding);
+  border: var(--border);
+  border-radius: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.8rem;
+  transition: var(--default-transition);
+  cursor: pointer;
+}
+
+.tag:hover {
+  border-color: var(--border-hover-color);
+  background-color: var(--container-bg-color);
+}
+
+.hashtag {
+  color: var(--text-color-light);
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: flex;
+}
+
+.ar_buttonContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
