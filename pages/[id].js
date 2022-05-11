@@ -121,28 +121,25 @@ export default function CardPage({ card }) {
               </div>
             </div>
 
-            {tags_ar ||
-              (tags_en && (
-                <div className={isEnglish ? styles.tags : styles.ar_tags}>
-                  {isEnglish
-                    ? tags_en?.map((tag, index) => (
-                        <div className={styles.tag} key={index}>
-                          <span className={styles.hashtag}>#</span>
-                          <Link href={`/tag/${tag}`} passHref>
-                            {tag}
-                          </Link>
-                        </div>
-                      ))
-                    : tags_ar?.map((tag, index) => (
-                        <div className={styles.tag} key={index}>
-                          <Link href={`/tag/${tag}`} passHref>
-                            {tag}
-                          </Link>
-                          <span className={styles.hashtag}>#</span>
-                        </div>
-                      ))}
-                </div>
-              ))}
+            <div className={isEnglish ? styles.tags : styles.ar_tags}>
+              {isEnglish
+                ? tags_en?.map((tag, index) => (
+                    <div className={styles.tag} key={index}>
+                      <span className={styles.hashtag}>#</span>
+                      <Link href={`/tag/${tag}`} passHref>
+                        {tag}
+                      </Link>
+                    </div>
+                  ))
+                : tags_ar?.map((tag, index) => (
+                    <div className={styles.tag} key={index}>
+                      <Link href={`/tag/${tag}`} passHref>
+                        {tag}
+                      </Link>
+                      <span className={styles.hashtag}>#</span>
+                    </div>
+                  ))}
+            </div>
 
             <div
               className={
@@ -153,8 +150,8 @@ export default function CardPage({ card }) {
                 download
                 href={
                   isEnglish
-                    ? `/_next/image?url=${encodeURI(img_en)}&w=1080&q=100`
-                    : `/_next/image?url=${encodeURI(img_ar)}&w=1080&q=100`
+                    ? `/_next/image?url=${encodeURI(img_en)}&w=1440&q=100`
+                    : `/_next/image?url=${encodeURI(img_ar)}&w=1440&q=100`
                 }
                 onClick={handleClick}
               >

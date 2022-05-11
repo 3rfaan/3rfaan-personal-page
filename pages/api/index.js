@@ -13,7 +13,12 @@ export default async function handler(req, res) {
     case "GET":
       try {
         if (tag) {
-          const cards = await Card.find({ tags: tag }).sort({ createdAt: -1 });
+          const cards = await Card.find(
+            { tags_ar: tag },
+            { tags_en: tag }
+          ).sort({
+            createdAt: -1,
+          });
           return res.status(200).json({ success: true, data: cards });
         }
 
