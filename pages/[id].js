@@ -149,12 +149,8 @@ export default function CardPage({ card }) {
                 download
                 href={
                   isEnglish
-                    ? `${NEXT_URL}/_next/image?url=${encodeURI(
-                        img_en
-                      )}&w=1080&q=100`
-                    : `${NEXT_URL}/_next/image?url=${encodeURI(
-                        img_ar
-                      )}&w=1080&q=100`
+                    ? `/_next/image?url=${encodeURI(img_en)}&w=1080&q=100`
+                    : `/_next/image?url=${encodeURI(img_ar)}&w=1080&q=100`
                 }
                 onClick={handleClick}
               >
