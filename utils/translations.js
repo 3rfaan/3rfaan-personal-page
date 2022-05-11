@@ -21,7 +21,7 @@ export const ar = {
 export const en = {
   intro: {
     profileName: "3rfaan Zoabi",
-    desc: `As-salamu alaykum wa rahmatullahi wa barakatoh dear visistors!\n\n
+    desc: `As-salamu alaykum wa rahmatullahi wa barakatoh dear visitors!\n\n
     This is my personal page for sharing my publications which contains Hadeeths of the Prophet (ﷺ) as well as quotes from established Islamic scholars.\n\n
     All content on this page can be shared and publicated freely. I also recommend you to share knowledge of our religion so you take the reward on the Day of Judgement - in sha' Allah!\n\n
     Thanks for your visit,\n
