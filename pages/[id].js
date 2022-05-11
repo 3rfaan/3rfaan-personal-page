@@ -63,6 +63,7 @@ export default function CardPage({ card }) {
               width={1080}
               height={1080}
               quality={100}
+              alt=""
               priority
             />
           </div>
@@ -102,7 +103,11 @@ export default function CardPage({ card }) {
                 <h4 className={styles.smallTitle}>
                   {isEnglish ? en.cardPage.hyperlink : ar.cardPage.hyperlink}
                 </h4>
-                <a href={isEnglish ? img_en : img_ar} target="_blank">
+                <a
+                  href={isEnglish ? img_en : img_ar}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Google Firebase
                   {isEnglish ? (
                     <span className={styles.firebaseRef}>{firebase_en}</span>

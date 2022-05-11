@@ -97,7 +97,7 @@ const Admin = () => {
     setCard(INITIAL_STATE);
     if (imgArabic && imgEnglish)
       createFirebaseCard(imgArabic, imgEnglish, setCard);
-  }, [imgArabic, imgEnglish]);
+  }, [imgArabic, imgEnglish, INITIAL_STATE]);
 
   const createCard = async () => {
     try {
@@ -171,7 +171,11 @@ const Admin = () => {
             {success.fetchSuccess && (
               <p className={styles.success}>
                 Fetched Card (
-                <a href={`${NEXT_URL}/${card?._id}`} target="_blank">
+                <a
+                  href={`${NEXT_URL}/${card?._id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {card?._id}
                 </a>
                 ) successfully!
@@ -191,7 +195,11 @@ const Admin = () => {
               <p className={styles.cardText}>
                 <TiWarning color="red" /> Are you sure you want to delete Card
                 ID (
-                <a href={`${NEXT_URL}/${card?._id}`} target="_blank">
+                <a
+                  href={`${NEXT_URL}/${card?._id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {card._id}
                 </a>
                 )
@@ -268,7 +276,11 @@ const Admin = () => {
             {success.createSuccess && (
               <p className={styles.success}>
                 Created Card (
-                <a href={`${NEXT_URL}/${card._id}`} target="_blank">
+                <a
+                  href={`${NEXT_URL}/${card._id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {card._id}
                 </a>
                 ) successfully!
@@ -313,7 +325,11 @@ const Admin = () => {
             {success.editSuccess && (
               <p className={styles.success}>
                 Edited Tags of Card (
-                <a href={`${NEXT_URL}/${card._id}`} target="_blank">
+                <a
+                  href={`${NEXT_URL}/${card._id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {card._id}
                 </a>
                 ) successfully!
