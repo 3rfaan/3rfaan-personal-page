@@ -27,15 +27,15 @@ function MyApp({ Component, session, ...pageProps }) {
 
       <LanguageContextProvider>
         <ThemeProvider theme={theme}>
-          <SessionProvider session={session}>
-            {Component.auth ? (
-              <Auth>
-                <Component {...pageProps} />
-              </Auth>
-            ) : (
+          {/* <SessionProvider session={session}> */}
+          {Component.auth ? (
+            <Auth>
               <Component {...pageProps} />
-            )}
-          </SessionProvider>
+            </Auth>
+          ) : (
+            <Component {...pageProps} />
+          )}
+          {/* </SessionProvider> */}
         </ThemeProvider>
       </LanguageContextProvider>
     </>

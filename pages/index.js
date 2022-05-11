@@ -25,7 +25,9 @@ export default function Home({ cards }) {
 
 export async function getServerSideProps() {
   const res = await axios.get(`https://3rfaan.vercel.app/api`);
-  const cards = await res.json();
+  const cards = res.data;
+
+  console.log(cards);
 
   return {
     props: {

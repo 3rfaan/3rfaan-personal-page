@@ -59,7 +59,7 @@ export async function getServerSideProps(ctx) {
   const { tag } = ctx.query;
 
   const res = await fetch(`https://3rfaan.vercel.app/api?tag=${tag}`);
-  const cards = await res.json();
+  const cards = res.data;
 
   return {
     props: {
