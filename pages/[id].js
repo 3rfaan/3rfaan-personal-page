@@ -14,6 +14,7 @@ import Link from "next/link";
 import { ar, en } from "../utils/translations";
 import { NEXT_URL } from "../utils/nextUrl";
 import NotFound from "./404";
+import axios from "axios";
 
 export default function CardPage({ card }) {
   const { language } = useContext(LanguageContext);
@@ -199,8 +200,10 @@ export default function CardPage({ card }) {
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
 
-  const res = await fetch(`https://3rfaan.vercel.app/api/${id}`);
+  const res = await axios.get(`https://3rfaan.vercel.app/api/${id}`);
   const card = await res.json();
+
+  console.log(card);
 
   return {
     props: {

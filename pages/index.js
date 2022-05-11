@@ -4,7 +4,7 @@ import Intro from "../components/Intro";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 import LanguageSwitch from "../components/LanguageSwitch";
-import { NEXT_URL } from "../utils/nextUrl";
+import axios from "axios";
 
 export default function Home({ cards }) {
   return (
@@ -24,7 +24,7 @@ export default function Home({ cards }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://3rfaan.vercel.app/api`);
+  const res = await axios.get(`https://3rfaan.vercel.app/api`);
   const cards = await res.json();
 
   return {
