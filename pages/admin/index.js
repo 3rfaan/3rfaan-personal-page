@@ -1,6 +1,6 @@
 import axios from "axios";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "../../styles/Admin.module.css";
 import { TiWarning } from "react-icons/ti";
 import { deleteFirebaseCard } from "../../utils/firebase/deleteUpload";
@@ -94,10 +94,9 @@ const Admin = () => {
 
   // Uploading Card images first to Firebase to create image links for Card
   useEffect(() => {
-    setCard(INITIAL_STATE);
     if (imgArabic && imgEnglish)
       createFirebaseCard(imgArabic, imgEnglish, setCard);
-  }, [imgArabic, imgEnglish, INITIAL_STATE]);
+  }, [imgArabic, imgEnglish]);
 
   const createCard = async () => {
     try {
@@ -115,16 +114,18 @@ const Admin = () => {
       }
       setSuccess({ createSuccess: true });
 
+      setImgArabic(null);
+      setImgEnglish(null);
+
       arInputRef.current.value = null;
       enInputRef.current.value = null;
       createTagsAr.current.value = "";
       createTagsEn.current.value = "";
     } catch (error) {
       setError({ createError: true });
+      console.log(error);
     }
   };
-
-  console.log(card);
 
   const editTags = async () => {
     try {
@@ -140,7 +141,6 @@ const Admin = () => {
       tags_en.current.value = "";
     } catch (error) {
       setError({ editError: true });
-      console.log(error);
     }
   };
 
