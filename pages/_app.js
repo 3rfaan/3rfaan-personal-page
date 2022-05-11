@@ -3,22 +3,41 @@ import "../styles/globals.css";
 import { LanguageContextProvider } from "../utils/context/languageContext";
 import { theme } from "../utils/theme";
 import { SessionProvider, useSession } from "next-auth/react";
+import Script from "next/script";
 
 function MyApp({ Component, session, ...pageProps }) {
   return (
-    <LanguageContextProvider>
-      <ThemeProvider theme={theme}>
-        <SessionProvider session={session}>
-          {Component.auth ? (
-            <Auth>
+    <>
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+
+      <Script strategy="lazyOnload">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+        page_path: window.location.pathname,
+        });
+    `}
+      </Script>
+
+      <LanguageContextProvider>
+        <ThemeProvider theme={theme}>
+          <SessionProvider session={session}>
+            {Component.auth ? (
+              <Auth>
+                <Component {...pageProps} />
+              </Auth>
+            ) : (
               <Component {...pageProps} />
-            </Auth>
-          ) : (
-            <Component {...pageProps} />
-          )}
-        </SessionProvider>
-      </ThemeProvider>
-    </LanguageContextProvider>
+            )}
+          </SessionProvider>
+        </ThemeProvider>
+      </LanguageContextProvider>
+    </>
   );
 }
 
