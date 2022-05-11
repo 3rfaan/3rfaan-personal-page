@@ -5,7 +5,7 @@ import { theme } from "../utils/theme";
 import { SessionProvider, useSession } from "next-auth/react";
 import Script from "next/script";
 
-function MyApp({ Component, session, ...pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
       <Script

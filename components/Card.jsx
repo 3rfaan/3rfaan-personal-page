@@ -6,7 +6,7 @@ import { LanguageContext } from "../utils/context/languageContext";
 import Link from "next/link";
 
 const Card = ({ card }) => {
-  const { _id, img_ar, img_en, tags, createdAt } = card;
+  const { _id, img_ar, img_en } = card;
   const { language } = useContext(LanguageContext);
 
   return (

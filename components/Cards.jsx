@@ -5,7 +5,7 @@ const Cards = ({ cards }) => {
   return (
     <section className={styles.cards}>
       <div className={styles.container}>
-        {cards?.map((card, index) => (
+        {cards?.map((card) => (
           <Card key={card._id} card={card} />
         ))}
       </div>
