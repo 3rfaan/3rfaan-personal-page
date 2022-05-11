@@ -51,9 +51,8 @@ export default function CardPage({ card }) {
   return (
     <section className="cardPage">
       <Head>
-        <title>Test</title>
+        <title>Post ID {_id}</title>
         <meta name="description" content="Islamic Hadeeths and famous quotes" />
-        <link rel="shortcut icon" href="#" />
       </Head>
 
       <Intro page="CardPage" />
@@ -121,25 +120,30 @@ export default function CardPage({ card }) {
                 </a>
               </div>
             </div>
-            <div className={isEnglish ? styles.tags : styles.ar_tags}>
-              {isEnglish
-                ? tags_en?.map((tag, index) => (
-                    <div className={styles.tag} key={index}>
-                      <span className={styles.hashtag}>#</span>
-                      <Link href={`/tag/${tag}`} passHref>
-                        {tag}
-                      </Link>
-                    </div>
-                  ))
-                : tags_ar?.map((tag, index) => (
-                    <div className={styles.tag} key={index}>
-                      <Link href={`/tag/${tag}`} passHref>
-                        {tag}
-                      </Link>
-                      <span className={styles.hashtag}>#</span>
-                    </div>
-                  ))}
-            </div>
+
+            {tags_ar ||
+              (tags_en && (
+                <div className={isEnglish ? styles.tags : styles.ar_tags}>
+                  {isEnglish
+                    ? tags_en?.map((tag, index) => (
+                        <div className={styles.tag} key={index}>
+                          <span className={styles.hashtag}>#</span>
+                          <Link href={`/tag/${tag}`} passHref>
+                            {tag}
+                          </Link>
+                        </div>
+                      ))
+                    : tags_ar?.map((tag, index) => (
+                        <div className={styles.tag} key={index}>
+                          <Link href={`/tag/${tag}`} passHref>
+                            {tag}
+                          </Link>
+                          <span className={styles.hashtag}>#</span>
+                        </div>
+                      ))}
+                </div>
+              ))}
+
             <div
               className={
                 isEnglish ? styles.buttonContainer : styles.ar_buttonContainer
@@ -196,12 +200,22 @@ export default function CardPage({ card }) {
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query;
 
-  const res = await axios.get(`https://3rfaan.vercel.app/api/${id}`);
-  const card = await res.data;
+  try {
+    const res = await axios.get(`https://3rfaan.vercel.app/api/${id}`);
+    const card = await res.data;
 
-  return {
-    props: {
-      card,
-    },
-  };
+    return {
+      props: {
+        card,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/",
+      },
+      props: {},
+    };
+  }
 }

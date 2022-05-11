@@ -4,10 +4,15 @@ import { LanguageContextProvider } from "../utils/context/languageContext";
 import { theme } from "../utils/theme";
 import { SessionProvider, useSession } from "next-auth/react";
 import Script from "next/script";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
+
       <Script
         id="gtm"
         strategy="lazyOnload"

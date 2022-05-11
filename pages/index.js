@@ -10,9 +10,8 @@ export default function Home({ cards }) {
   return (
     <main className={styles.home}>
       <Head>
-        <title>3rfaan</title>
+        <title>عرفان رعبي</title>
         <meta name="description" content="Islamic Hadeeths and famous quotes" />
-        <link rel="shortcut icon" href="#" />
       </Head>
 
       <Intro page="Home" />

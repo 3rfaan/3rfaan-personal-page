@@ -81,14 +81,14 @@
 }
 
 .tags {
-  margin: var(--container-main-margin) 0;
+  margin-top: var(--container-main-margin);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .ar_tags {
-  margin: var(--container-main-margin) 0;
+  margin-top: var(--container-main-margin);
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
@@ -117,10 +117,12 @@
 }
 
 .buttonContainer {
+  margin-top: var(--container-main-margin);
   display: flex;
 }
 
 .ar_buttonContainer {
+  margin-top: var(--container-main-margin);
   display: flex;
   flex-direction: row-reverse;
 }

@@ -110,7 +110,7 @@ const Admin = () => {
             .split(",")
             .map((tag) => tag.trim()),
         });
-        setCard(res.data.data);
+        setCard(INITIAL_STATE);
       }
       setSuccess({ createSuccess: true });
 
@@ -146,9 +146,8 @@ const Admin = () => {
   return (
     <section className={styles.admin}>
       <Head>
-        <title>3rfaan</title>
+        <title>Dashboard</title>
         <meta name="description" content="Islamic Hadeeths and famous quotes" />
-        <link rel="shortcut icon" href="#" />
       </Head>
 
       <div className={styles.dashboard}>

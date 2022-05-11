@@ -9,7 +9,7 @@ import { LanguageContext } from "../../utils/context/languageContext";
 import { BiArrowBack } from "react-icons/bi";
 import { IoMdArrowForward } from "react-icons/io";
 import { ar, en } from "../../utils/translations";
-import { NEXT_URL } from "../../utils/nextUrl";
+import axios from "axios";
 
 const TagPage = ({ cards }) => {
   const { language } = useContext(LanguageContext);
@@ -18,9 +18,8 @@ const TagPage = ({ cards }) => {
   return (
     <main className={styles.tagPage}>
       <Head>
-        <title>3rfaan</title>
+        <title>#{router.query.tag}</title>
         <meta name="description" content="Islamic Hadeeths and famous quotes" />
-        <link rel="shortcut icon" href="#" />
       </Head>
 
       <Intro page="TagPage" />
@@ -47,7 +46,7 @@ const TagPage = ({ cards }) => {
         )}
       </div>
 
-      <Cards cards={cards.data} />
+      <Cards cards={cards?.data} />
       <Footer />
     </main>
   );
@@ -58,7 +57,7 @@ export default TagPage;
 export async function getServerSideProps(ctx) {
   const { tag } = ctx.query;
 
-  const res = await fetch(`https://3rfaan.vercel.app/api?tag=${tag}`);
+  const res = await axios.get(`https://3rfaan.vercel.app/api?tag=${tag}`);
   const cards = res.data;
 
   return {

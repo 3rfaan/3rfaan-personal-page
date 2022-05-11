@@ -16,7 +16,6 @@ const NotFound = () => {
       <Head>
         <title>404 - Not Found</title>
         <meta name="description" content="Islamic Hadeeths and famous quotes" />
-        <link rel="shortcut icon" href="#" />
       </Head>
 
       <Intro page="TagPage" />
