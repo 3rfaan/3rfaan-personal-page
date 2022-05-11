@@ -13,11 +13,14 @@ import { DownloadSnackbar } from "../utils/theme";
 import Link from "next/link";
 import { ar, en } from "../utils/translations";
 import { NEXT_URL } from "../utils/nextUrl";
+import NotFound from "./404";
 
 export default function CardPage({ card }) {
   const { language } = useContext(LanguageContext);
 
   const [open, setOpen] = useState(false);
+
+  if (!card) return <NotFound />;
 
   const {
     _id,
@@ -122,17 +125,17 @@ export default function CardPage({ card }) {
                 ? tags_en?.map((tag, index) => (
                     <div className={styles.tag} key={index}>
                       <span className={styles.hashtag}>#</span>
-                      <Link href={`${NEXT_URL}/tag/${tag}`} passHref>
+                      <Link href={`/tag/${tag}`} passHref>
                         {tag}
                       </Link>
                     </div>
                   ))
                 : tags_ar?.map((tag, index) => (
                     <div className={styles.tag} key={index}>
-                      <span className={styles.hashtag}>#</span>
-                      <Link href={`${NEXT_URL}/tag/${tag}`} passHref>
+                      <Link href={`/tag/${tag}`} passHref>
                         {tag}
                       </Link>
+                      <span className={styles.hashtag}>#</span>
                     </div>
                   ))}
             </div>

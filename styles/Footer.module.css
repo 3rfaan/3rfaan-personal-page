@@ -7,3 +7,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.ar_footer {
+  margin-top: 7rem;
+  padding: 1.5rem;
+  color: #adbac7;
+  background-color: #000;
+  text-align: right;
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

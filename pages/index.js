@@ -17,7 +17,7 @@ export default function Home({ cards }) {
 
       <Intro page="Home" />
       <LanguageSwitch />
-      <Cards cards={cards.data} />
+      <Cards cards={cards?.data} />
       <Footer />
     </main>
   );

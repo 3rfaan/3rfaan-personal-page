@@ -123,7 +123,6 @@ const Admin = () => {
       createTagsEn.current.value = "";
     } catch (error) {
       setError({ createError: true });
-      console.log(error);
     }
   };
 
@@ -347,3 +346,5 @@ const Admin = () => {
 };
 
 export default Admin;
+
+Admin.auth = true;

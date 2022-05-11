@@ -6,7 +6,9 @@ import { ar, en } from "../utils/translations";
 const Footer = () => {
   const { language } = useContext(LanguageContext);
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={language === "english" ? styles.footer : styles.ar_footer}
+    >
       {language === "arabic" ? ar.footer : en.footer}
     </footer>
   );
