@@ -74,7 +74,6 @@ export default function CardPage({ card }) {
                   : `/_next/image?url=${encodeURI(img_en)}&w=640&q=1`
               }
               alt=""
-              priority
             />
           </div>
           <div className={styles.infoContainer}>
