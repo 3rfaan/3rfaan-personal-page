@@ -67,6 +67,12 @@ export default function CardPage({ card }) {
               width={1440}
               height={1440}
               quality={100}
+              placeholder="blur"
+              blurDataURL={
+                language === "arabic"
+                  ? `/_next/image?url=${encodeURI(img_ar)}&w=640&q=1`
+                  : `/_next/image?url=${encodeURI(img_en)}&w=640&q=1`
+              }
               alt=""
               priority
             />
