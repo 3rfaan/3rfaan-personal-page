@@ -1,5 +1,7 @@
 .container {
   max-width: var(--card-max-width);
+  border: 5px dashed --border-color;
+  border-radius: var(--border-radius);
   line-height: 0;
 }
 

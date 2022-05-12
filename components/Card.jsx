@@ -20,6 +20,7 @@ const Card = ({ card }) => {
               height={600}
               quality={75}
               alt=""
+              priority
             />
           </a>
         </Link>

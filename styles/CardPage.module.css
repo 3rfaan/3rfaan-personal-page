@@ -65,7 +65,6 @@
 }
 
 .firebaseRef {
-  margin: 0 0.2rem;
   padding: 0.2rem;
   font-size: 0.7rem;
   font-weight: bold;
@@ -125,4 +124,14 @@
   margin-top: var(--container-main-margin);
   display: flex;
   flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 570px) {
+  .buttonContainer {
+    justify-content: center;
+  }
+
+  .ar_buttonContainer {
+    justify-content: center;
+  }
 }

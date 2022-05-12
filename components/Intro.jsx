@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AiOutlineInstagram } from "react-icons/ai";
+import { BsTelegram } from "react-icons/bs";
 import styles from "../styles/Intro.module.css";
 import { useContext } from "react";
 import { LanguageContext } from "../utils/context/languageContext";
@@ -50,6 +51,20 @@ const Intro = ({ page }) => {
               >
                 <AiOutlineInstagram size={27} />
                 3bd.mwhd
+              </h4>
+            </a>
+            <a
+              href="https://t.me/abd_mw7d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h4
+                className={
+                  language === "english" ? styles.nickname : styles.ar_nickname
+                }
+              >
+                <BsTelegram size={27} />
+                abd_mw7d
               </h4>
             </a>
             <p

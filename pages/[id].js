@@ -63,8 +63,8 @@ export default function CardPage({ card }) {
           <div className={styles.imgContainer}>
             <Image
               src={isEnglish ? img_en : img_ar}
-              width={1080}
-              height={1080}
+              width={1440}
+              height={1440}
               quality={100}
               alt=""
               priority
@@ -111,7 +111,6 @@ export default function CardPage({ card }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Google Firebase
                   {isEnglish ? (
                     <span className={styles.firebaseRef}>{firebase_en}</span>
                   ) : (
@@ -123,20 +122,24 @@ export default function CardPage({ card }) {
 
             <div className={isEnglish ? styles.tags : styles.ar_tags}>
               {isEnglish
-                ? tags_en?.map((tag) => (
-                    <Link href={`/tag/${tag}`} key={_id} passHref>
-                      <div className={styles.tag}>
-                        <span className={styles.hashtag}>#</span>
-                        {tag}
-                      </div>
+                ? tags_en?.map((tag, index) => (
+                    <Link href={`/tag/${tag}`} key={index} passHref>
+                      <a>
+                        <div className={styles.tag}>
+                          <span className={styles.hashtag}>#</span>
+                          {tag}
+                        </div>
+                      </a>
                     </Link>
                   ))
-                : tags_ar?.map((tag) => (
-                    <Link href={`/tag/${tag}`} key={_id} passHref>
-                      <div className={styles.tag}>
-                        {tag}
-                        <span className={styles.hashtag}>#</span>
-                      </div>
+                : tags_ar?.map((tag, index) => (
+                    <Link href={`/tag/${decodeURI(tag)}`} key={index} passHref>
+                      <a>
+                        <div className={styles.tag}>
+                          {tag}
+                          <span className={styles.hashtag}>#</span>
+                        </div>
+                      </a>
                     </Link>
                   ))}
             </div>
@@ -150,8 +153,8 @@ export default function CardPage({ card }) {
                 download
                 href={
                   isEnglish
-                    ? `/_next/image?url=${encodeURI(img_en)}&w=1440&q=100`
-                    : `/_next/image?url=${encodeURI(img_ar)}&w=1440&q=100`
+                    ? `/_next/image?url=${encodeURI(img_en)}&w=1920&q=100`
+                    : `/_next/image?url=${encodeURI(img_ar)}&w=1920&q=100`
                 }
                 onClick={handleClick}
               >

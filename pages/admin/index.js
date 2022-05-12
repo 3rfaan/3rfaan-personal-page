@@ -59,6 +59,8 @@ const Admin = () => {
   const tags_ar = useRef("");
   const tags_en = useRef("");
 
+  // Snackbar
+
   const fetchCard = async () => {
     try {
       const res = await axios.get(`${NEXT_URL}/api/${inputId}`);
@@ -113,6 +115,10 @@ const Admin = () => {
         setCard(INITIAL_STATE);
       }
       setSuccess({ createSuccess: true });
+
+      setTimeout(() => {
+        setSuccess(INITIAL_SUCCESS);
+      }, 1000);
 
       setImgArabic(null);
       setImgEnglish(null);
@@ -271,11 +277,9 @@ const Admin = () => {
               Create
             </button>
 
-            {success.createSuccess &&
-              setTimeout(
-                <p className={styles.success}>Created Card successfully!</p>,
-                1000
-              )}
+            {success.createSuccess && (
+              <p className={styles.success}>Created Card successfully!</p>
+            )}
 
             {error.createError && (
               <p className={styles.error}>Error creating Card</p>

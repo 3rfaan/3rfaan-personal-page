@@ -32,7 +32,20 @@ export const theme = createTheme({
 
 export const DownloadButton = styled(Button)(({ theme }) => ({
   color: "white",
-  fontWeight: "600",
+  fontSize: 18,
+  fontWeight: "700",
+  ontFamily: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    '"Segoe UI"',
+    "Roboto",
+    '"Helvetica Neue"',
+    "Arial",
+    "sans-serif",
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(","),
   backgroundColor: "var(--btn-download-color)",
   "&:hover": {
     backgroundColor: "var(--btn-download-hover-color)",
@@ -42,5 +55,17 @@ export const DownloadButton = styled(Button)(({ theme }) => ({
 export const DownloadSnackbar = styled(Alert)(({ theme }) => ({
   color: "white",
   fontSize: "1rem",
+  ontFamily: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    '"Segoe UI"',
+    "Roboto",
+    '"Helvetica Neue"',
+    "Arial",
+    "sans-serif",
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(","),
   backgroundColor: "var(--btn-download-color)",
 }));

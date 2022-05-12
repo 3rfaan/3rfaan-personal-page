@@ -49,6 +49,7 @@
 
 .nickname {
   margin-bottom: 1.5rem;
+  color: var(--text-color-light);
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -57,6 +58,7 @@
 
 .ar_nickname {
   margin-bottom: 1.5rem;
+  color: var(--text-color-light);
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
