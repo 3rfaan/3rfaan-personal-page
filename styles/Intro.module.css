@@ -45,6 +45,8 @@
 
 .profileName {
   margin-bottom: 0.75rem;
+  width: fit-content;
+  color: var(--text-color);
 }
 
 .nickname {

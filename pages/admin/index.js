@@ -13,8 +13,6 @@ const Admin = () => {
     img_en: "",
     firebase_ar: "",
     firebase_en: "",
-    tags_ar: [],
-    tags_en: [],
   };
 
   const INITIAL_SUCCESS = {
@@ -118,7 +116,7 @@ const Admin = () => {
 
       setTimeout(() => {
         setSuccess(INITIAL_SUCCESS);
-      }, 1000);
+      }, 2000);
 
       setImgArabic(null);
       setImgEnglish(null);

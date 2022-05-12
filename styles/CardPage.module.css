@@ -15,6 +15,7 @@
 .container {
   padding: var(--container-main-padding);
   max-width: 90%;
+  background-color: var(--container-bg-color);
   border: var(--border);
   border-radius: var(--border-radius);
   display: flex;
@@ -26,6 +27,7 @@
 .ar_container {
   padding: var(--container-main-padding);
   max-width: 90%;
+  background-color: var(--container-bg-color);
   border: var(--border);
   border-radius: var(--border-radius);
   display: flex;
@@ -44,7 +46,7 @@
 .infoContainer {
   padding: var(--container-main-padding);
   min-width: 40%;
-  background-color: var(--container-bg-color);
+  background-color: var(--bg-color);
   border: var(--border);
   border-radius: var(--border-radius);
   flex: 2;
@@ -98,7 +100,7 @@
   padding: var(--small-padding);
   border: var(--border);
   border-radius: 20px;
-  background-color: var(--bg-color);
+  background-color: var(--container-bg-color);
   color: var(--text-color);
   font-size: 0.8rem;
   transition: var(--default-transition);
@@ -106,8 +108,7 @@
 }
 
 .tag:hover {
-  border-color: var(--border-hover-color);
-  background-color: var(--container-bg-color);
+  background-color: #000;
 }
 
 .hashtag {
@@ -126,7 +127,7 @@
   flex-direction: row-reverse;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 768px) {
   .buttonContainer {
     justify-content: center;
   }

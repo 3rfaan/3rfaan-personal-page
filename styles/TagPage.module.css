@@ -17,23 +17,3 @@
 .hashtag {
   color: var(--text-color-light);
 }
-
-.goBackContainer {
-  color: var(--text-color-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-.ar_goBackContainer {
-  color: var(--text-color-light);
-  text-align: right;
-  direction: rtl;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}

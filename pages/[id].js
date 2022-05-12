@@ -12,9 +12,9 @@ import { Snackbar } from "@mui/material";
 import { DownloadSnackbar } from "../utils/theme";
 import Link from "next/link";
 import { ar, en } from "../utils/translations";
-import { NEXT_URL } from "../utils/nextUrl";
 import NotFound from "./404";
 import axios from "axios";
+import GoBack from "../components/GoBack";
 
 export default function CardPage({ card }) {
   const { language } = useContext(LanguageContext);
@@ -57,6 +57,7 @@ export default function CardPage({ card }) {
 
       <Intro page="CardPage" />
       <LanguageSwitch />
+      <GoBack />
 
       <div className={styles.card}>
         <div className={isEnglish ? styles.container : styles.ar_container}>

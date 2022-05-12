@@ -19,6 +19,12 @@ const Card = ({ card }) => {
               width={600}
               height={600}
               quality={75}
+              placeholder="blur"
+              blurDataURL={
+                language === "arabic"
+                  ? `/_next/image?url=${encodeURI(img_ar)}&w=640&q=1`
+                  : `/_next/image?url=${encodeURI(img_en)}&w=640&q=1`
+              }
               alt=""
               priority
             />
