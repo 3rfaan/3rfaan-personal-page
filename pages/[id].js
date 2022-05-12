@@ -123,17 +123,17 @@ export default function CardPage({ card }) {
 
             <div className={isEnglish ? styles.tags : styles.ar_tags}>
               {isEnglish
-                ? tags_en?.map((tag, index) => (
-                    <Link href={`/tag/${tag}`} passHref>
-                      <div className={styles.tag} key={index}>
+                ? tags_en?.map((tag) => (
+                    <Link href={`/tag/${tag}`} key={_id} passHref>
+                      <div className={styles.tag}>
                         <span className={styles.hashtag}>#</span>
                         {tag}
                       </div>
                     </Link>
                   ))
-                : tags_ar?.map((tag, index) => (
-                    <Link href={`/tag/${tag}`} passHref>
-                      <div className={styles.tag} key={index}>
+                : tags_ar?.map((tag) => (
+                    <Link href={`/tag/${tag}`} key={_id} passHref>
+                      <div className={styles.tag}>
                         {tag}
                         <span className={styles.hashtag}>#</span>
                       </div>
