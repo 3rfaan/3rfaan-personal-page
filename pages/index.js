@@ -22,7 +22,7 @@ export default function Home({ cards }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await axios.get(`https://3rfaan.vercel.app/api`);
   const cards = res.data;
 
