@@ -42,14 +42,24 @@ export default TagPage;
 export async function getServerSideProps(ctx) {
   const { tag } = ctx.query;
 
-  const res = await axios.get(
-    `https://3rfaan.vercel.app/api?tag=${encodeURI(tag)}`
-  );
-  const cards = res.data;
+  try {
+    const res = await axios.get(
+      `https://3rfaan.vercel.app/api?tag=${encodeURI(tag)}`
+    );
+    const cards = res.data;
 
-  return {
-    props: {
-      cards,
-    },
-  };
+    return {
+      props: {
+        cards,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        permament: false,
+        destination: "/",
+      },
+      props: {},
+    };
+  }
 }

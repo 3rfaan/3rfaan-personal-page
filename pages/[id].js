@@ -208,7 +208,7 @@ export async function getServerSideProps(ctx) {
 
   try {
     const res = await axios.get(`https://3rfaan.vercel.app/api/${id}`);
-    const card = await res.data;
+    const card = res.data;
 
     return {
       props: {
