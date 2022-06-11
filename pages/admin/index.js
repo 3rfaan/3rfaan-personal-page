@@ -152,7 +152,7 @@ const Admin = () => {
   // Fetch all tags
   useEffect(() => {
     const getAllTags = async () => {
-      const res = await axios.get("http://localhost:3000/api?tag=allTags");
+      const res = await axios.get(`${NEXT_URL}/api?tag=allTags`);
       setAllTags(res.data.data);
     };
     getAllTags();
