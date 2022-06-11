@@ -74,6 +74,47 @@
   text-align: center;
 }
 
+.tags {
+  margin-top: var(--container-main-margin);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tagContainer {
+  position: relative;
+}
+
+.tag {
+  padding: var(--small-padding);
+  border: var(--border);
+  border-radius: 20px;
+  background-color: var(--container-bg-color);
+  color: var(--text-color);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background-color: #000;
+}
+
+.tagCount {
+  position: absolute;
+  top: -7.5px;
+  right: -7.5px;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(222, 150, 15);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 980px) {
   .cardContainer {
     justify-content: center;

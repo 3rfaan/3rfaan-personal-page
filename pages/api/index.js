@@ -1,5 +1,6 @@
 import dbConnect from "../../lib/dbConnect";
 import Card from "../../models/Card";
+import { getAllTags } from "../../utils/getAllTags";
 
 export default async function handler(req, res) {
   const {
@@ -12,6 +13,12 @@ export default async function handler(req, res) {
   switch (method) {
     case "GET":
       try {
+        if (tag === "allTags") {
+          const allTags = await getAllTags();
+
+          return res.status(200).json({ success: true, data: allTags });
+        }
+
         if (tag) {
           const cards = await Card.find({
             $or: [{ tags_ar: tag }, { tags_en: tag }],

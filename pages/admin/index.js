@@ -6,6 +6,7 @@ import { TiWarning } from "react-icons/ti";
 import { deleteFirebaseCard } from "../../utils/firebase/deleteUpload";
 import { createFirebaseCard } from "../../utils/firebase/fileUpload";
 import { NEXT_URL } from "../../utils/nextUrl";
+import Link from "next/link";
 
 const Admin = () => {
   const INITIAL_STATE = {
@@ -30,6 +31,7 @@ const Admin = () => {
   };
 
   const [card, setCard] = useState(INITIAL_STATE);
+  const [allTags, setAllTags] = useState({});
 
   const { img_ar, img_en, firebase_ar, firebase_en } = card;
 
@@ -147,6 +149,15 @@ const Admin = () => {
     }
   };
 
+  // Fetch all tags
+  useEffect(() => {
+    const getAllTags = async () => {
+      const res = await axios.get("http://localhost:3000/api?tag=allTags");
+      setAllTags(res.data.data);
+    };
+    getAllTags();
+  }, []);
+
   return (
     <section className={styles.admin}>
       <Head>
@@ -188,7 +199,6 @@ const Admin = () => {
               <p className={styles.error}>Error fetching Card</p>
             )}
           </div>
-
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Delete Card</h3>
             {!card?._id ? (
@@ -219,7 +229,6 @@ const Admin = () => {
               <p className={styles.error}>Error deleting Card</p>
             )}
           </div>
-
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Create New Card</h3>
 
@@ -283,7 +292,6 @@ const Admin = () => {
               <p className={styles.error}>Error creating Card</p>
             )}
           </div>
-
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Edit Tags</h3>
             <label htmlFor="tags_ar" className={styles.label}>
@@ -331,6 +339,37 @@ const Admin = () => {
             {error.editError && (
               <p className={styles.error}>Error editing Tags</p>
             )}
+          </div>
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>All Arabic Tags</h3>
+            <div className={styles.tags}>
+              {allTags[0]?.arabic_tags?.map((tag, index) => (
+                <Link href={`/tag/${tag._id}`} key={index} passHref>
+                  <a>
+                    <div className={styles.tagContainer}>
+                      <div className={styles.tag}>{tag._id}</div>
+                      <div className={styles.tagCount}>{tag.count}</div>
+                    </div>
+                  </a>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>All English Tags</h3>
+            <div className={styles.tags}>
+              {allTags[0]?.english_tags?.map((tag, index) => (
+                <Link href={`/tag/${tag._id}`} key={index} passHref>
+                  <a>
+                    <div className={styles.tagContainer}>
+                      <div className={styles.tag}>{tag._id}</div>
+                      <div className={styles.tagCount}>{tag.count}</div>
+                    </div>
+                  </a>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
